@@ -1,0 +1,30 @@
+---
+title: "MSSQL connect with R"
+author: "your name"
+date: "5/11/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(tigerstats)
+library(knitr)
+opts_chunk$set(echo = FALSE)
+library("odbc")
+library("DBI")
+
+conn <- odbc::dbConnect(odbc::odbc(),
+                      Driver = "SQL Server",
+                      Server = "",
+                      Database = "",
+                      UID = "",
+                      PWD = "")
+
+```
+
+
+# Your subtitle and sql query below
+```{sql connection=conn}
+select *
+from Pracownicy;
+```
+
