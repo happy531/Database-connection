@@ -16,4 +16,4 @@ try:
     print(pandas.DataFrame.head(data))
 
 except:
-    print("Failed to connect database")
+    print("Failed to connect database or execute query")
