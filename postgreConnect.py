@@ -3,10 +3,10 @@
 import psycopg2, pandas
 
 try:
-    conn = psycopg2.connect(dbname="", user="", password="", host="")
+    conn = psycopg2.connect(host="", dbname="", user="", password="")
 
     sql = """
-    select * from Autorzy
+    select * from Table
     """
     data = pandas.read_sql_query(sql, conn)
 

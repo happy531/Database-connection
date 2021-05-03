@@ -3,10 +3,12 @@
 import pyodbc, pandas
 
 try:
-    conn = pyodbc.connect("DRIVER={SQL Server};" "SERVER=;" "DATABASE=;" "UID=;" "PWD=;")
+    conn = pyodbc.connect(
+        "DRIVER={SQL Server};" "SERVER=localhost\\SQLEXPRESS;" "DATABASE=AdventureWorks2019;" "UID=;" "PWD=;"
+    )
 
     sql = """
-    select * from Autorzy
+    select top 5 JobTitle, OrganizationLevel from HumanResources.Employee
     """
     data = pandas.read_sql_query(sql, conn)
 

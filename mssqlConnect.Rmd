@@ -1,7 +1,7 @@
 ---
 title: "MSSQL connect with R"
 author: "your name"
-date: "5/11/2021"
+date: "month/day/year"
 output: pdf_document
 ---
 
@@ -14,8 +14,8 @@ library("DBI")
 
 conn <- odbc::dbConnect(odbc::odbc(),
                       Driver = "SQL Server",
-                      Server = "",
-                      Database = "",
+                      Server = "localhost\\SQLEXPRESS",
+                      Database = "AdventureWorks2019",
                       UID = "",
                       PWD = "")
 
@@ -24,7 +24,7 @@ conn <- odbc::dbConnect(odbc::odbc(),
 
 # Your subtitle and sql query below
 ```{sql connection=conn}
-select *
-from Pracownicy;
+select top 5 JobTitle, OrganizationLevel 
+from HumanResources.Employee;
 ```
 
